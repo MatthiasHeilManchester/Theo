@@ -1,0 +1,344 @@
+#!MC 1410
+$!VarSet |LFDSFN1| = '"NEW_RUNS_CHECK_CONDITION_NUMBER/condition_number.dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2"'
+$!SetStyleBase Factory
+$!GlobalPaper 
+  PaperSizeInfo
+    {
+    Letter
+      {
+      Width = 8.5
+      Height = 11
+      LeftHardClipOffset = 0.125
+      RightHardClipOffset = 0.125
+      TopHardClipOffset = 0.125
+      BottomHardClipOffset = 0.125
+      }
+    }
+$!Page 
+  Name = 'Untitled'
+  PaperAttributes
+    {
+    BackgroundColor = White
+    IsTransparent = Yes
+    OrientPortrait = No
+    ShowGrid = Yes
+    ShowRuler = No
+    ShowPaper = No
+    PaperSize = Letter
+    RulerSpacing = OneInch
+    PaperGridSpacing = HalfInch
+    RegionInWorkArea
+      {
+      X1 = 1
+      Y1 = 0.25
+      X2 = 10
+      Y2 = 8.25
+      }
+    }
+### Frame Number 1 ###
+$!ReadDataSet  '|LFDSFN1|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL1|'
+$!RemoveVar |LFDSVL1|
+$!RemoveVar |LFDSFN1|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = 1
+    Y = 0.25
+    }
+  Width = 9
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = 'Frame 001'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-7]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      Margin = 0
+      }
+    RowSpacing = 1.4
+    XYPos
+      {
+      X = 98.838
+      Y = 73.682
+      }
+    }
+$!LineMap  [1]
+  Name = '&ZN&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Red
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    LineThickness = 0.4
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [2]
+  Name = '&ZN&'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Green
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    LineThickness = 0.4
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!LineMap  [3]
+  Name = '&ZN&'
+  Assign
+    {
+    Zone = 3
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Blue
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    SymbolShape
+      {
+      GeomShape = Del
+      }
+    Color = Blue
+    FillColor = Blue
+    LineThickness = 0.4
+    }
+  BarCharts
+    {
+    Color = Blue
+    FillColor = Blue
+    }
+  ErrorBars
+    {
+    Color = Blue
+    }
+$!LineMap  [4]
+  Name = '&ZN&'
+  Assign
+    {
+    Zone = 4
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Custom1
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    SymbolShape
+      {
+      GeomShape = Del
+      }
+    Color = Custom1
+    FillColor = Custom1
+    LineThickness = 0.4
+    }
+  BarCharts
+    {
+    Color = Custom1
+    FillColor = Custom1
+    }
+  ErrorBars
+    {
+    Color = Custom1
+    }
+$!LineMap  [5]
+  Name = '&ZN&'
+  Assign
+    {
+    Zone = 5
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Custom3
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    SymbolShape
+      {
+      GeomShape = Del
+      }
+    Color = Custom3
+    FillColor = Custom3
+    LineThickness = 0.4
+    }
+  BarCharts
+    {
+    Color = Custom3
+    FillColor = Custom3
+    }
+  ErrorBars
+    {
+    Color = Custom3
+    }
+$!LineMap  [6]
+  Name = '&ZN&'
+  Assign
+    {
+    Zone = 6
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Purple
+    LinePattern = Dotted
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    SymbolShape
+      {
+      GeomShape = Diamond
+      }
+    Color = Purple
+    FillColor = Purple
+    LineThickness = 0.4
+    }
+  BarCharts
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  ErrorBars
+    {
+    Color = Purple
+    }
+$!LineMap  [7]
+  Name = '&ZN&'
+  Assign
+    {
+    Zone = 7
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Red
+    LinePattern = Dotted
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    SymbolShape
+      {
+      GeomShape = Diamond
+      }
+    Color = Red
+    FillColor = Red
+    LineThickness = 0.4
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = 420
+    RangeMax = 39229.880599999996775
+    GRSpacing = 10000
+    Title
+      {
+      TitleMode = UseText
+      Text = 'number of degrees of freedom'
+      }
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    CoordScale = Log
+    RangeMin = 241.807342529296875
+    RangeMax = 5922320172.7758188248
+    GRSpacing = 1000000000
+    Title
+      {
+      TitleMode = UseText
+      Text = 'condition number'
+      }
+    }
+$!LinePlotLayers 
+  ShowSymbols = Yes
+$!FrameControl ActivateByNumber
+  Frame = 1
+$!SetStyleBase Config

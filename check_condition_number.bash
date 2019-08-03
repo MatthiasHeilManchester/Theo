@@ -122,7 +122,7 @@ done # dirichlet neumann
 echo " "
 echo "To post-process:" 
 echo " " 
-echo "   tecplot NEW_RUNS_CHECK_CONDITION_NUMBER/condition_number.lay " 
+echo "   tecplot condition_number.lay " 
 echo " " 
 
 

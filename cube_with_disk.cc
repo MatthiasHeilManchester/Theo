@@ -32,7 +32,6 @@
 // Use this to get the single disk without the surrounding torus
 //#define SINGLE_DISK
 
-
 #include<fenv.h>
 
 //Generic routines
@@ -120,6 +119,7 @@ namespace Global_Parameters
 
   double theta = atan2(x[1],x[0]);
 
+  // c++ 11 only!
   double eta = sinh(real(acosh(y)));
 
   double ksi = sin(imag(acosh(y)));

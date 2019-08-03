@@ -4,8 +4,8 @@ noinst_PROGRAMS= \
 two_d_poisson_with_face_element \
 cube_with_disk
 
-#one_d_poisson_with_face_element \
-#three_d_poisson_with_face_element \
+#one_d_poisson_with_face_element
+#three_d_poisson_with_face_element
 
 
 
@@ -53,7 +53,7 @@ two_d_poisson_with_face_element_LDADD = -L@libdir@  -lpoisson -lgeneric $(EXTERN
 # the include directory which we specify with -I
 # Automake will replace the variable @includedir@ with the actual
 # include directory.
-INCLUDES = -I@includedir@  
+AM_CPPFLAGS +=  -I@includedir@  
 
 EXTRA_DIST = check_condition_number.bash  impose_amplitude_runs.bash  validate_rc.bash condition_number.lay
 

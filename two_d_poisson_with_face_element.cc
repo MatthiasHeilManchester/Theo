@@ -51,6 +51,10 @@ using namespace oomph;
 namespace Global_Physical_Variables
 {
 
+
+ // Constant term in singular fct
+ double Constant_on_singular_boundary=0.0;
+
  /// Number that identifies which
  /// case we're doing when checking the condition number
  /// 0: real problem; 1: FE-only; 2: fake r_c equation
@@ -121,6 +125,10 @@ namespace Global_Physical_Variables
 
   du_dx[0]=dudr*cos(phi)-1.0/r*dudphi*sin(phi);
   du_dx[1]=dudr*sin(phi)+1.0/r*dudphi*cos(phi);
+
+
+  // Now add constant
+  u+=Constant_on_singular_boundary;
  }
 
 
@@ -967,6 +975,13 @@ void StepProblem<ELEMENT>::apply_boundary_conditions()
       {
        pin_it=true;
       }
+
+     //... but over-rule the lot if we use Lagrange multipliers
+     if (CommandLineArgs::command_line_flag_has_been_set
+         ("--enforce_dirichlet_bcs_by_lagrange_multipliers"))
+      {
+       pin_it=false;
+      }
     }
    // Pin it?
    if (pin_it)
@@ -1614,6 +1629,14 @@ int main(int argc, char **argv)
   "--uniform_element_area",
   &Global_Physical_Variables::Uniform_element_area);
 
+
+ // Constant in singular solution
+ CommandLineArgs::specify_command_line_flag(
+  "--constant_in_singular_solution",
+  &Global_Physical_Variables::Constant_on_singular_boundary);
+
+
+
  // // Max. number of adaptations in code
  // unsigned max_adapt = 0;
  // CommandLineArgs::specify_command_line_flag(
@@ -1697,8 +1720,15 @@ int main(int argc, char **argv)
    }
   
 
-  cout << "not done yet\n";
-  abort();
+
+  // Doing normal run: Just solve the bloody thing
+  problem.newton_solve();
+  problem.doc_solution(doc_info);
+  doc_info.number()++;
+  
+
+  // cout << "not done yet\n";
+  // abort();
 
   
 

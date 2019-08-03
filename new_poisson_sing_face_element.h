@@ -1507,8 +1507,8 @@ class FaceGeometry<MyTPoissonElement<1,NNODE_1D> >:
    const unsigned& flag) 
   {
 
-   oomph_info << "in here: Poisson_sing_el_pt = " 
-              << Poisson_sing_el_pt << std::endl;
+   /* oomph_info << "in here: Poisson_sing_el_pt = "  */
+   /*            << Poisson_sing_el_pt << std::endl; */
 
    // hierher this is all for 1D; keep around until DIM-dimensional 
    // version works
@@ -2177,9 +2177,9 @@ fill_in_generic_residual_contribution_poisson_flux(
 
 
 
- oomph_info 
-  << "In PoissonWithSingularityFluxElement:: ...residual... Poisson_sing_el_pt = " 
-  << Poisson_sing_el_pt << " ndof  = " << ndof() << std::endl;
+ /* oomph_info  */
+ /*  << "In PoissonWithSingularityFluxElement:: ...residual... Poisson_sing_el_pt = "  */
+ /*  << Poisson_sing_el_pt << " ndof  = " << ndof() << std::endl; */
 
  if (flag==1) 
   {
